@@ -1,12 +1,15 @@
-import Navbar from "@/components/Navbar"
-
+"use client";
+import Header from "@/components/Header";
+import Navbar from "@/components/Navbar";
 
 //rafce
 const page = () => {
   return (
-    <nav>
-      <Navbar/>
-    </nav>
-  )
-}
-export default page
+    
+    <>
+        <Navbar />
+        <Header/>
+    </>
+  );
+};
+export default page;
