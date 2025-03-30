@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const Header = () => {
   return (
-    <div className="border border-amber-300 w-11/12 max-w-3xl text-center mx-auto h-screen flex flex-col items-center justify-center gap-4">
+    <div id="home" className="border border-amber-300  w-11/12 max-w-3xl text-center mx-auto h-screen flex flex-col items-center justify-center gap-4">
       <div>
         <Image
           src="/assets/profile.png"
@@ -22,16 +22,24 @@ const Header = () => {
       <div className="flex flex-col sm:flex-row items-center gap-4 mt-5 ">
         <a
           href="#contact"
-          className="px-10 py-3 border border-white rounded-full bg-black text-white flex items-center gap-2"
+          className="px-10 py-3 border border-white rounded-full bg-[#000] text-white flex items-center gap-2"
         >
           contact me
         </a>
         {/* /sample-resume.pdf */}
         <a
           href=""
-          className="px-10 py-3 border rounded-full border-gray-500 flex items-center gap-2"
+          className="px-10 py-3 border rounded-full border-gray-500 flex items-center gap-2 
+           hover:shadow-[-1px_-1px_rgba(255,_255,_255,_0.6),_1px_1px_5px_rgba(0,_0,_0,_0.3),inset_-2px_-2px_5px_rgba(255,_255,_255,_1),inset_2px_2px_4px_rgba(0,_0,_0,_0.3)]
+         hover:text-[#112D4E]"
         >
-          my resume
+          my resume{" "}
+          <Image
+            src="/assets/dowload.png"
+            alt="download"
+            width={15}
+            height={15}
+          />
         </a>
       </div>
     </div>

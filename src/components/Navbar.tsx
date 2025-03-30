@@ -12,7 +12,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="border border-red-400 w-full fixed top-0 left-0 bg-white md:px-6 px-5 lg:px-8 xl:px-[8%] md:py-4 py-2 flex items-center justify-between z-50">
+    <nav className="border border-red-400 w-full fixed top-0 left-0 bg-white/70 backdrop-blur md:px-6 px-5 lg:px-8 xl:px-[8%] md:py-4 py-2 flex items-center justify-between z-50">
       {/* icon Logo */}
       <a className="border border-amber-400 w-28 flex items-center">
         <PiSunglasses className="w-10 h-10"/>
@@ -27,7 +27,7 @@ const Navbar = () => {
           <a href="#about">About</a>
         </li>
         <li>
-          <a href="#portfolio">Portfolio</a>
+          <a href="#My work">My work</a>
         </li>
         <li>
           <a href="#contact">Contact</a>
@@ -51,8 +51,8 @@ const Navbar = () => {
             </a>
           </li>
           <li>
-            <a href="#portfolio" >
-              Portfolio
+            <a href="#mywork" >
+              My work
             </a>
           </li>
           <li>
