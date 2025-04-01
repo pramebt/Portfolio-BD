@@ -7,7 +7,7 @@ const About = () => {
     <div id="about" className="border w-full px-[12%] py-10 scroll-mt-20">
       <h2 className="text-center text-5xl">About me</h2>
       <div className="border flex flex-row">
-        <div className=" border flex w-[70%] flex-col lg:flex-row items-start justify-center mt-25 ">
+        <div className=" border flex w-[70%] flex-col md:flex-row items-start justify-center mt-25 ">
         <div className="w-64 sm:w-80 roundded-3xl max-w-none ">
             <Image
               src="/assets/profile.png"
