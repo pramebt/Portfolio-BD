@@ -31,7 +31,7 @@ const Contact = () => {
     return (
     <div id='contact'className="w-full px-6 md:px-12 lg:px-[12%] py-10 scroll-mt-20">
         <h2 className="text-center text-3xl md:text-4xl lg:text-5xl">Contact</h2>
-        <p className="text-center max-w-2xl mx-auto mt-5 mb-8 text-base md:text-lg">ringing</p>
+        <p className="text-center max-w-2xl mx-auto mt-5 mb-8 text-base md:text-lg">You can contact me here.</p>
 
         <form onSubmit={onSubmit} className="max-w-2xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10 mb-8">

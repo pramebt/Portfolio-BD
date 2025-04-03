@@ -1,6 +1,9 @@
+"use client";
+
 import Image from "next/image";
-import { FaInstagram } from "react-icons/fa";
+import { useState } from "react";
 const Header = () => {
+
   return (
     <div id="home" className=" w-11/12 max-w-3xl text-center mx-auto h-screen flex flex-col items-center justify-center gap-4">
       <div>
@@ -42,9 +45,12 @@ const Header = () => {
           />
         </a>
       </div>
-      <div className="flex gap-2 mt-10">
-      <a href="https://www.instagram.com/prame.bt/"><FaInstagram className="w-10 h-10"/></a>
-      <a href="https://www.instagram.com/prame.bt/"><FaInstagram className="w-10 h-10"/></a>
+      <div className="flex gap-5 mt-10">
+      <a href="https://www.instagram.com/prame.bt/"><Image src="/assets/instagram.png" alt='instagram icon' width={100} height={100} className="w-10 "/></a>
+      <a href="https://www.facebook.com/bandit.prame/"><Image src="/assets/facebook.png" alt='facebook icon' width={100} height={100} className="w-10 "/></a>
+      <a href="https://github.com/pramebt"><Image src="/assets/github.png" alt='github icon' width={100} height={100} className="w-10 "/></a>
+      <a href="#"><Image src="/assets/mobile.png" onClick={() => navigator.clipboard.writeText("0994594970")} alt='phone icon' width={100} height={100} className="w-10 "/></a>
+      
       </div>
     </div>
   );
