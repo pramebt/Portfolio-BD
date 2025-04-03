@@ -1,7 +1,6 @@
 "use client";
 import Image from "next/image";
 import React, { useState } from "react";
-import { IoCloseOutline } from "react-icons/io5";
 import { PiSunglasses } from "react-icons/pi";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);

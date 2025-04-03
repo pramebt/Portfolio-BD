@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import { FaInstagram } from "react-icons/fa";
+
 
 const About = () => {
   return (
