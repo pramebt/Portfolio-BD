@@ -1,8 +1,8 @@
 import Image from "next/image";
-
+import { FaInstagram } from "react-icons/fa";
 const Header = () => {
   return (
-    <div id="home" className="border border-amber-300  w-11/12 max-w-3xl text-center mx-auto h-screen flex flex-col items-center justify-center gap-4">
+    <div id="home" className=" w-11/12 max-w-3xl text-center mx-auto h-screen flex flex-col items-center justify-center gap-4">
       <div>
         <Image
           src="/assets/profile.png"
@@ -16,9 +16,9 @@ const Header = () => {
         Hi! I'm Bandit Kaewnoi
       </h3>
       <h1 className="text-3xl sm:text-6xl lg:text-[66px]">
-        ja me ngan mai nah
+        Web Developer
       </h1>
-      <p className="max-w-2xl mx-auto">sa thu</p>
+      <p className="max-w-2xl mx-auto">Recent Graduate</p>
       <div className="flex flex-col sm:flex-row items-center gap-4 mt-5 ">
         <a
           href="#contact"
@@ -41,6 +41,10 @@ const Header = () => {
             height={15}
           />
         </a>
+      </div>
+      <div className="flex gap-2 mt-10">
+      <a href="https://www.instagram.com/prame.bt/"><FaInstagram className="w-10 h-10"/></a>
+      <a href="https://www.instagram.com/prame.bt/"><FaInstagram className="w-10 h-10"/></a>
       </div>
     </div>
   );

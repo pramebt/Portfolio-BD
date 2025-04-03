@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 const Projects = () => {
   return (
-    <div id="projects" className="border w-full px-6 md:px-12 lg:px-[12%] py-10 scroll-mt-20">
+    <div id="projects" className="w-full px-6 md:px-12 lg:px-[12%] py-10 scroll-mt-20">
       {/* Projects */}
       <h2 className="text-center text-3xl md:text-4xl lg:text-5xl">Projects</h2>
       <p className="text-center max-w-2xl mx-auto mt-5 mb-8 text-base md:text-lg">Projects</p>
@@ -39,6 +39,10 @@ const Projects = () => {
           </div>
         ))}
       </div>
+      <a href="" className='w-max flex gap-2 items-center justify-center text-gray-700 border-[0.5px] rounded-full px-10 py-3 mx-auto '> 
+      show more <Image src="/assets/right-arrow.png" alt='right arrow' width={15} height={15} 
+      />
+      </a>
     </div>
   );
 };
