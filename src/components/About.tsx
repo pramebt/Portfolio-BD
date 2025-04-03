@@ -21,7 +21,7 @@ const About = () => {
         </div>
         <div className="flex border w-full flex-col lg:justify-start lg:items-start justify-center items-center gap-6 mt-5">
           <p className=" mb-4 max-w-xl text-sm md:text-base lg:text-lg">
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I'm a recent graduate passionate about front-end development. I am eager to collaborate with others, continuously develop my skills. Ready to develop yourself to have skills in working and I want to enhance skills thought hands-on learning, collaboration ondiverse projects,and delivering impactful outcome, all geared towards preparing for successful career in the Web Developer.
+          I &apos;m a recent graduate passionate about front-end development. I am eager to collaborate with others, continuously develop my skills. Ready to develop yourself to have skills in working and I want to enhance skills thought hands-on learning, collaboration ondiverse projects,and delivering impactful outcome, all geared towards preparing for successful career in the Web Developer.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             <div className="border p-4 rounded-xl  hover:bg-[#000000]  hover:text-white group

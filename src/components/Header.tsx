@@ -16,7 +16,7 @@ const Header = () => {
         />
       </div>
       <h3 className="flex items-end gap-2 text-xl md:text-2xl">
-        Hi! I'm Bandit Kaewnoi
+        Hi! I &apos;m Bandit Kaewnoi
       </h3>
       <h1 className="text-3xl sm:text-6xl lg:text-[66px]">
         Web Developer
