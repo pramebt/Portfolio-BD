@@ -17,7 +17,7 @@ const Footer = () => {
 
         <div className="text-center">
           <p>© 2025 Bandit Kaewnoi. All rights reserved </p>
-          \
+          
         </div>
     </div>
   )
