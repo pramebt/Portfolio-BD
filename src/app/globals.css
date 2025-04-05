@@ -3,3 +3,11 @@
 * {
   font-family : 'Quicksand';
 }
+.dark {
+  background-color: #000;
+  color: #fff;
+}
+
+.dark .bg-white {
+  background-color: #333;
+}

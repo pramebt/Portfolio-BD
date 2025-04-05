@@ -35,7 +35,7 @@ const Navbar = () => {
 
       {/* Responsive Menu for Mobile */}
       <div
-        className={`absolute top-16 right-0 bg-[#DBE2EF] shadow-lg rounded-lg p-5 md:hidden transition-transform duration-300 ease-in-out 
+        className={`absolute top-16 right-0 bg-black text-white shadow-lg rounded-lg p-5 md:hidden transition-transform duration-300 ease-in-out 
                 ${isOpen ? "translate-x-0" : "translate-x-full"} z-40`}
       >
         <ul className="space-y-4">
@@ -64,7 +64,7 @@ const Navbar = () => {
 
       <div className="flex items-center gap-4">
         <button>
-          <Image src="/assets/moon.png" alt="moon" width={20} height={20} />
+          
         </button>
 
         {/* Contact Button */}
