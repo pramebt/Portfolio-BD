@@ -48,7 +48,7 @@ const About = () => {
           </div>
           <div>
             <h4 className="mt-6 mb-2 text-lg">skills</h4>
-            <div className="flex flex-cols-4 md:flex-row gap-2">
+            <div className="grid grid-cols-4 gap-2">
               {["Typescript", "Javascript", "React Native","ReactJS","NextJS", "HTML", "CSS", "PHP", "Git"].map(
                 (skill) => (
                   <h1
