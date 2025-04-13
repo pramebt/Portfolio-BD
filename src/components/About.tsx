@@ -49,11 +49,11 @@ const About = () => {
           <div>
             <h4 className="mt-6 mb-2 text-lg">skills</h4>
             <div className="grid grid-cols-4 gap-2">
-              {["Typescript", "Javascript", "React Native","ReactJS","NextJS", "HTML", "CSS","TailwindCSS", "PHP", "Git"].map(
+              {["Typescript", "Javascript", "ReactNative","ReactJS","NextJS", "HTML", "CSS","TailwindCSS", "PHP", "Git"].map(
                 (skill) => (
                   <h1
                     key={skill}
-                    className="text-sm sm:text-base border px-3 py-1 rounded-lg flex items-center hover:scale-105 bg-white"
+                    className="text-sm sm:text-base border px-3 py-1 rounded-lg flex items-center justify-center hover:scale-105 bg-white"
                   >
                     {skill}
                   </h1>
