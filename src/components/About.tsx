@@ -53,7 +53,7 @@ const About = () => {
                 (skill) => (
                   <h1
                     key={skill}
-                    className="text-sm sm:text-base border px-2 py-1 rounded-lg flex items-center hover:scale-105 bg-white"
+                    className="text-sm sm:text-base border px-3 py-1 rounded-lg flex items-center hover:scale-105 bg-white"
                   >
                     {skill}
                   </h1>
