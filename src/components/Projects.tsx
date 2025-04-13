@@ -21,10 +21,10 @@ const Projects = () => {
       image: "/assets/bg/Age-cal.png",
     },
     {
-      title: "ADD PROJECT",
-      subtitle: " ",
-      link: "https://www.github.com",
-      image: "/assets/bg/App-project.png",
+      title: "Ticket Ganerate",
+      subtitle: "Ticket Ganerate",
+      link: "https://ticket-generate-bd.vercel.app/",
+      image: "/assets/bg/Editing.png",
     },
     {
       title: "ADD PROJECT",
