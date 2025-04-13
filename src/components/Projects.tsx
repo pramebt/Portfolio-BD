@@ -27,10 +27,16 @@ const Projects = () => {
       image: "/assets/bg/Editing.png",
     },
     {
-      title: "ADD PROJECT",
-      subtitle: " ",
-      link: "https://www.stackoverflow.com",
-      image: "/assets/bg/Frontend-project.png",
+      title: "Portfolio template BD",
+      subtitle: "React + Vite",
+      link: "https://portfolio-bd-template.vercel.app/",
+      image: "/assets/bg/portfolio.png",
+    },
+    {
+      title: "Login UI",
+      subtitle: "trainning",
+      link: "https://template-login-2.vercel.app/",
+      image: "/assets/bg/template-ui.png",
     },
     
   ];
