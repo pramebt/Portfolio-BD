@@ -65,7 +65,7 @@ const Projects = () => {
     >
       <h2 className="text-center text-3xl md:text-4xl lg:text-5xl">Projects</h2>
       <p className="text-center max-w-2xl mx-auto mt-5 mb-8 text-base md:text-lg">
-        Projects
+      My Web Projects
       </p>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 my-10">
@@ -78,7 +78,7 @@ const Projects = () => {
             <Link href={project.link} target="_blank">
               <div
                 className="bg-white/70 rounded-md left-1/2 transform translate-y-1/4 py-3 px-5 flex items-center justify-between 
-                transition duration-500 hover:-translate-y-2 cursor-pointer mt-40"
+                transition duration-500 hover:-translate-y-2 cursor-pointer mt-40 hover:bg-white"
               >
                 <div>
                   <h2 className="font-semibold md:text-base">
