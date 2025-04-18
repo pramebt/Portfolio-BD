@@ -10,7 +10,7 @@ const page = () => {
 
   return (
     
-    <>
+    <div className="bg-white w-screen min-h-screen">
     
         <Navbar />
         <Header/>
@@ -18,7 +18,7 @@ const page = () => {
         <Projects/>
         <Contact/>
         <Footer/>
-    </>
+    </div>
   );
 };
 export default page;

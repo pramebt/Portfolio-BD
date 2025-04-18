@@ -15,7 +15,7 @@ const Projects = () => {
     //   image: "/assets/bg/Frontend-project.png",
     // },
     {
-      title: "Age Calculator",
+      title: "Age Calculator (Nextjs)",
       subtitle: "Calculate age from day, month, year (AD)",
       link: "https://age-calculator-bd.vercel.app/",
       image: "/assets/bg/Age-cal.png",
@@ -27,8 +27,14 @@ const Projects = () => {
       image: "/assets/bg/Editing.png",
     },
     {
-      title: "Portfolio template BD",
-      subtitle: "React + Vite",
+      title: "Contactform-BD (Nextjs)",
+      subtitle: "",
+      link: "https://contactform-bd.vercel.app/",
+      image: "/assets/bg/contactform.png",
+    },
+    {
+      title: "Portfolio template BD (React + Vite)",
+      subtitle: "",
       link: "https://portfolio-bd-template.vercel.app/",
       image: "/assets/bg/portfolio.png",
     },

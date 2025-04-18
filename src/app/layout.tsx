@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Quicksand } from "next/font/google";
 import "./globals.css";
-
+import { ThemeProvider } from "@/components/theme-provider";
 
 
 const quicksand = Quicksand({
@@ -20,12 +20,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth ">
+    <html lang="en" suppressHydrationWarning className="scroll-smooth ">
       <body
         className={`${quicksand.className} antialiased 
           `}
       >
+        
         {children}
+        
       </body>
     </html>
   );

@@ -2,6 +2,8 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import { PiSunglasses } from "react-icons/pi";
+
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -63,9 +65,7 @@ const Navbar = () => {
       </div>
 
       <div className="flex items-center gap-4">
-        <button>
-          
-        </button>
+        
 
         {/* Contact Button */}
         <a
@@ -105,7 +105,7 @@ const Navbar = () => {
           ></span>
         </button>
       </div>
-      {/* ---------------------mobile menu-------------------------- */}
+      
       
     </nav>
   );
