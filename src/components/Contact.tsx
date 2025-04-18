@@ -89,11 +89,12 @@ const Contact = () => {
       <form onSubmit={onSubmit} className="max-w-2xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10 mb-8">
           <div className="relative">
+            <p>Name *</p>
             <input
               type="text"
               placeholder="Enter your name"
               name="name"
-              className={`flex-1 p-3 outline-none border-[0.5px] rounded-md bg-white w-full ${
+              className={`mt-2 flex-1 p-3 outline-none border-[0.5px] rounded-md bg-white w-full cursor-pointer ${
                 errors.name ? "border-red-500" : "border-gray-400"
               }`}
             />
@@ -103,11 +104,12 @@ const Contact = () => {
           </div>
 
           <div className="relative">
+            <p>Email *</p>
             <input
               type="email"
               placeholder="Enter your email"
               name="email"
-              className={`flex-1 p-3 outline-none border-[0.5px] rounded-md bg-white w-full ${
+              className={`mt-2 flex-1 p-3 outline-none border-[0.5px] rounded-md bg-white w-full cursor-pointer ${
                 errors.email ? "border-red-500" : "border-gray-400"
               }`}
             />
@@ -118,11 +120,12 @@ const Contact = () => {
         </div>
 
         <div className="relative">
+          <p>Message *</p>
           <textarea
             rows={6}
             placeholder="Enter your message"
             name="message"
-            className={`w-full p-4 outline-none border-[0.5px] rounded-md bg-white mb-1 resize-none ${
+            className={`mt-2 w-full p-4 outline-none border-[0.5px] rounded-md bg-white mb-1 resize-none cursor-pointer ${
               errors.message ? "border-red-500" : "border-gray-400"
             }`}
           ></textarea>
