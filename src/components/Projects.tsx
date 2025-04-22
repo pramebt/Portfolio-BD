@@ -8,7 +8,7 @@ const Projects = () => {
   const [showMore, setShowMore] = useState(false);
   const [visibleCount, setVisibleCount] = useState(4);
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true ,amount: 0.3,});
+  const isInView = useInView(ref,{ once: true ,amount: 0.3,});
 
   const projects = [
     {
