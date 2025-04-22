@@ -1,19 +1,16 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
 const Projects = () => {
   const [showMore, setShowMore] = useState(false);
   const [visibleCount, setVisibleCount] = useState(4);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true ,amount: 0.3,});
 
   const projects = [
-    // {
-    //   title: "ADD PROJECT",
-    //   subtitle: " ",
-    //   link: "https://www.stackoverflow.com",
-    //   image: "/assets/bg/Frontend-project.png",
-    // },
     {
       title: "Age Calculator (Nextjs)",
       subtitle: "Calculate age from day, month, year (AD)",
@@ -44,40 +41,41 @@ const Projects = () => {
       link: "https://template-login-2.vercel.app/",
       image: "/assets/bg/template-ui.png",
     },
-    
   ];
 
   useEffect(() => {
     const handleResize = () => {
       const width = window.innerWidth;
-      if (width >= 768) {
-        setVisibleCount(3);
-      } else {
-        setVisibleCount(4);
-      }
+      setVisibleCount(width >= 768 ? 3 : 4);
     };
-
-    handleResize(); // run on mount
-    window.addEventListener("resize", handleResize); // listen for changes
+    handleResize();
+    window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const visibleProjects = showMore ? projects : projects.slice(0, visibleCount);
 
   return (
-    <div
+    <motion.div
+      ref={ref}
       id="projects"
       className="w-full px-6 md:px-12 lg:px-[12%] py-10 scroll-mt-20"
+      initial={{ opacity: 0, y: 50 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.8 }}
     >
       <h2 className="text-center text-3xl md:text-4xl lg:text-5xl">Projects</h2>
       <p className="text-center max-w-2xl mx-auto mt-5 mb-8 text-base md:text-lg">
-      My Web Projects
+        My Web Projects
       </p>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 my-10">
         {visibleProjects.map((project, index) => (
-          <div
+          <motion.div
             key={index}
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={isInView ? { opacity: 1, scale: 1 } : {}}
+            transition={{ delay: 0.1 * index, duration: 0.5 }}
             className="aspect-square bg-cover bg-center bg-no-repeat p-5 rounded-lg w-full h-auto"
             style={{ backgroundImage: `url(${project.image})` }}
           >
@@ -87,14 +85,12 @@ const Projects = () => {
                 transition duration-500 hover:-translate-y-2 cursor-pointer mt-40 hover:bg-white"
               >
                 <div>
-                  <h2 className="font-semibold md:text-base">
-                    {project.title}
-                  </h2>
+                  <h2 className="font-semibold md:text-base">{project.title}</h2>
                   <h2 className="text-sm md:text-base">{project.subtitle}</h2>
                 </div>
                 <div
                   className="border rounded-full border-black w-9 aspect-square flex items-center justify-center 
-                shadow-[2px_2px_0_#000]  group-hover:bg-lime-300 transition"
+                  shadow-[2px_2px_0_#000] group-hover:bg-lime-300 transition"
                 >
                   <Image
                     src="/assets/code-icon.png"
@@ -105,12 +101,14 @@ const Projects = () => {
                 </div>
               </div>
             </Link>
-          </div>
+          </motion.div>
         ))}
       </div>
 
       {!showMore && (
-        <button
+        <motion.button
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
           onClick={() => setShowMore(true)}
           className="w-max flex gap-2 items-center justify-center text-gray-700 border-[0.5px] rounded-full px-10 py-3 mx-auto transition hover:bg-gray-100"
         >
@@ -121,9 +119,9 @@ const Projects = () => {
             width={15}
             height={15}
           />
-        </button>
+        </motion.button>
       )}
-    </div>
+    </motion.div>
   );
 };
 

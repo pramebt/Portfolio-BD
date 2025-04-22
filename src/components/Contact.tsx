@@ -1,6 +1,20 @@
 "use client";
-import React, { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import React, { useRef, useState } from "react";
+import { motion, AnimatePresence, useInView } from "framer-motion";
+
+// Motion variants
+const fadeUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: i * 0.2,
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  }),
+};
 
 const Contact = () => {
   const [result, setResult] = useState("");
@@ -10,6 +24,9 @@ const Contact = () => {
     email: false,
     message: false,
   });
+
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true}); // เลื่อนถึง 20% ของ element
 
   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -29,8 +46,7 @@ const Contact = () => {
     };
     setErrors(newErrors);
 
-    const hasError = Object.values(newErrors).includes(true);
-    if (hasError) {
+    if (Object.values(newErrors).includes(true)) {
       setResult("❌ Please fix the highlighted fields.");
       setShowAlert(true);
       setTimeout(() => setShowAlert(false), 3000);
@@ -38,7 +54,6 @@ const Contact = () => {
     }
 
     setResult("Sending....");
-
     formData.append("access_key", "20720aa8-5d0e-4355-b66c-a1b5076e21d8");
 
     const response = await fetch("https://api.web3forms.com/submit", {
@@ -49,7 +64,7 @@ const Contact = () => {
     const data = await response.json();
 
     if (data.success) {
-      setResult("Form submitted successfully!");
+      setResult("✅ Form submitted successfully!");
       form.reset();
       setErrors({ name: false, email: false, message: false });
     } else {
@@ -61,8 +76,12 @@ const Contact = () => {
   };
 
   return (
-    <div id="contact" className="relative w-full px-6 md:px-12 lg:px-[12%] py-10 scroll-mt-20">
-      {/* Animated Alert Box */}
+    <div
+      id="contact"
+      ref={ref}
+      className="relative w-full px-6 md:px-12 lg:px-[12%] py-10 scroll-mt-20"
+    >
+      {/* Alert Box */}
       <AnimatePresence>
         {showAlert && result && (
           <motion.div
@@ -80,67 +99,84 @@ const Contact = () => {
       </AnimatePresence>
 
       {/* Heading */}
-      <h2 className="text-center text-3xl md:text-4xl lg:text-5xl">Contact</h2>
-      <p className="text-center max-w-2xl mx-auto mt-5 mb-8 text-base md:text-lg">
+      <motion.h2
+        variants={fadeUp}
+        initial="hidden"
+        animate={isInView ? "visible" : "hidden"}
+        custom={0}
+        className="text-center text-3xl md:text-4xl lg:text-5xl"
+      >
+        Contact
+      </motion.h2>
+      <motion.p
+        variants={fadeUp}
+        initial="hidden"
+        animate={isInView ? "visible" : "hidden"}
+        custom={1}
+        className="text-center max-w-2xl mx-auto mt-5 mb-8 text-base md:text-lg"
+      >
         You can contact me here.
-      </p>
+      </motion.p>
 
       {/* Form */}
-      <form onSubmit={onSubmit} className="max-w-2xl mx-auto">
+      <motion.form
+        onSubmit={onSubmit}
+        className="max-w-2xl mx-auto"
+        variants={fadeUp}
+        initial="hidden"
+        animate={isInView ? "visible" : "hidden"}
+        custom={2}
+      >
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10 mb-8">
-          <div className="relative">
+          <motion.div className="relative" custom={3} variants={fadeUp}>
             <p>Name *</p>
             <input
               type="text"
-              placeholder="Enter your name"
               name="name"
-              className={`mt-2 flex-1 p-3 outline-none border-[0.5px] rounded-md bg-white w-full cursor-pointer ${
+              placeholder="Enter your name"
+              className={`mt-2 p-3 w-full border rounded-md bg-white outline-none cursor-pointer ${
                 errors.name ? "border-red-500" : "border-gray-400"
               }`}
             />
-            {errors.name && (
-              <p className="text-red-500 text-sm mt-1">Name is required</p>
-            )}
-          </div>
+            {errors.name && <p className="text-red-500 text-sm mt-1">Name is required</p>}
+          </motion.div>
 
-          <div className="relative">
+          <motion.div className="relative" custom={4} variants={fadeUp}>
             <p>Email *</p>
             <input
               type="email"
-              placeholder="Enter your email"
               name="email"
-              className={`mt-2 flex-1 p-3 outline-none border-[0.5px] rounded-md bg-white w-full cursor-pointer ${
+              placeholder="Enter your email"
+              className={`mt-2 p-3 w-full border rounded-md bg-white outline-none cursor-pointer ${
                 errors.email ? "border-red-500" : "border-gray-400"
               }`}
             />
-            {errors.email && (
-              <p className="text-red-500 text-sm mt-1">Enter a valid email</p>
-            )}
-          </div>
+            {errors.email && <p className="text-red-500 text-sm mt-1">Enter a valid email</p>}
+          </motion.div>
         </div>
 
-        <div className="relative">
+        <motion.div className="relative" custom={5} variants={fadeUp}>
           <p>Message *</p>
           <textarea
+            name="message"
             rows={6}
             placeholder="Enter your message"
-            name="message"
-            className={`mt-2 w-full p-4 outline-none border-[0.5px] rounded-md bg-white mb-1 resize-none cursor-pointer ${
+            className={`mt-2 w-full p-4 border rounded-md bg-white outline-none resize-none cursor-pointer ${
               errors.message ? "border-red-500" : "border-gray-400"
             }`}
           ></textarea>
-          {errors.message && (
-            <p className="text-red-500 text-sm mb-5">Message is required</p>
-          )}
-        </div>
+          {errors.message && <p className="text-red-500 text-sm mb-5">Message is required</p>}
+        </motion.div>
 
-        <button
+        <motion.button
           type="submit"
-          className="py-3 px-8 w-max flex items-center justify-between gap-2 bg-black/80 text-white rounded-full mx-auto hover:bg-black duration-500"
+          className="py-3 px-8 mx-auto flex bg-black/80 text-white rounded-full hover:bg-black duration-500"
+          custom={6}
+          variants={fadeUp}
         >
           Submit now
-        </button>
-      </form>
+        </motion.button>
+      </motion.form>
     </div>
   );
 };
