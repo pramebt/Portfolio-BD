@@ -138,7 +138,7 @@ const Contact = () => {
           type="submit"
           className="py-3 px-8 w-max flex items-center justify-between gap-2 bg-black/80 text-white rounded-full mx-auto hover:bg-black duration-500"
         >
-          Submit
+          Submit now
         </button>
       </form>
     </div>
