@@ -46,7 +46,7 @@ const About = () => {
         >
           <p className="mb-4 max-w-xl text-sm md:text-base lg:text-lg"> I&apos;m a recent graduate passionate about front-end development, eager to learn through hands-on projects and collaboration. I aim to develop my skills and contribute to impactful outcomes, preparing for a successful career as a Web Developer. </p>
 
-          <div className="grid grid-cols-1 sm:grid-cols lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1  gap-4">
             <div className="border p-4 rounded-xl hover:bg-black hover:text-white group duration-500 ease-out">
               <Image
                 src="/assets/edu-icon.png"
