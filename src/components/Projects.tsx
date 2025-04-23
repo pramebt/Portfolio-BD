@@ -3,12 +3,13 @@ import { useState, useEffect, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { TbHandClick } from "react-icons/tb";
 
 const Projects = () => {
   const [showMore, setShowMore] = useState(false);
   const [visibleCount, setVisibleCount] = useState(4);
   const ref = useRef(null);
-  const isInView = useInView(ref,{ once: true ,amount: 0.3,});
+  const isInView = useInView(ref, { once: true, amount: 0.3 });
 
   const projects = [
     {
@@ -18,11 +19,18 @@ const Projects = () => {
       image: "/assets/bg/Age-cal.png",
     },
     {
-      title: "Ticket Ganerate",
+      title: "Todolist (React + Vite)",
+      subtitle: "",
+      link: "https://mini-todolist-bd.vercel.app/",
+      image: "/assets/bg/mini-todolist.png",
+    },
+    {
+      title: "Ticket Ganerate (Nextjs)",
       subtitle: "Ticket Ganerate",
       link: "https://ticket-generate-bd.vercel.app/",
       image: "/assets/bg/Editing.png",
     },
+
     {
       title: "Contactform-BD (Nextjs)",
       subtitle: "",
@@ -76,28 +84,26 @@ const Projects = () => {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={isInView ? { opacity: 1, scale: 1 } : {}}
             transition={{ delay: 0.1 * index, duration: 0.5 }}
-            className="aspect-square bg-cover bg-center bg-no-repeat p-5 rounded-lg w-full h-auto"
+            className="aspect-square bg-cover bg-center bg-no-repeat p-5 rounded-lg w-full h-auto relative group"
             style={{ backgroundImage: `url(${project.image})` }}
           >
             <Link href={project.link} target="_blank">
               <div
-                className="bg-white/70 rounded-md left-1/2 transform translate-y-1/4 py-3 px-5 flex items-center justify-between 
-                transition duration-500 hover:-translate-y-2 cursor-pointer mt-40 hover:bg-white"
+                className="absolute bottom-5 left-1/2 -translate-x-1/2 translate-y-0 group-hover:-translate-y-2 
+                bg-white/70 group-hover:bg-white rounded-md py-3 px-5 flex items-center justify-between 
+                transition duration-500 cursor-pointer w-[90%] max-w-sm"
               >
                 <div>
-                  <h2 className="font-semibold md:text-base">{project.title}</h2>
+                  <h2 className="font-semibold md:text-base">
+                    {project.title}
+                  </h2>
                   <h2 className="text-sm md:text-base">{project.subtitle}</h2>
                 </div>
                 <div
                   className="border rounded-full border-black w-9 aspect-square flex items-center justify-center 
-                  shadow-[2px_2px_0_#000] group-hover:bg-lime-300 transition"
+                shadow-[2px_2px_0_#000] group-hover:bg-amber-300 transition"
                 >
-                  <Image
-                    src="/assets/code-icon.png"
-                    alt="code icon"
-                    width={20}
-                    height={20}
-                  />
+                  <TbHandClick width={20} height={20} />
                 </div>
               </div>
             </Link>

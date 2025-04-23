@@ -170,7 +170,7 @@ const Contact = () => {
 
         <motion.button
           type="submit"
-          className="py-3 px-8 mx-auto flex bg-black/80 text-white rounded-full hover:bg-black duration-500"
+          className="mt-5 py-3 px-8 mx-auto flex bg-black/80 text-white rounded-full hover:bg-black duration-500"
           custom={6}
           variants={fadeUp}
         >
