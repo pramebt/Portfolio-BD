@@ -28,7 +28,7 @@ const Projects = () => {
       title: "Ticket Ganerate (Nextjs)",
       subtitle: "Ticket Ganerate",
       link: "https://ticket-generate-bd.vercel.app/",
-      image: "/assets/bg/Editing.png",
+      image: "/assets/bg/ticket.png",
     },
 
     {

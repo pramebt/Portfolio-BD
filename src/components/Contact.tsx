@@ -26,7 +26,7 @@ const Contact = () => {
   });
 
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true}); // เลื่อนถึง 20% ของ element
+  const isInView = useInView(ref, { once: true}); 
 
   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
